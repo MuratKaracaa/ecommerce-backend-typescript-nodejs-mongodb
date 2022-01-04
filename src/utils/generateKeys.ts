@@ -1,7 +1,7 @@
 import { generateKeyPairSync } from 'crypto'
-import { writeFileSync } from 'fs'
+import { writeFileSync, mkdirSync } from 'fs'
 
-import { privateKeyPath, publicKeyPath } from '../constants'
+import { privateKeyPath, publicKeyPath, secretPath } from '../constants'
 
 const { publicKey, privateKey } = generateKeyPairSync('rsa', {
     modulusLength: 4096,
@@ -14,6 +14,6 @@ const { publicKey, privateKey } = generateKeyPairSync('rsa', {
         format: 'pem',
     },
 })
-
+mkdirSync(secretPath)
 writeFileSync(privateKeyPath, privateKey)
 writeFileSync(publicKeyPath, publicKey)

@@ -9,11 +9,8 @@ export const roles = {
 }
 
 export const models = {
-    banner: 'Banner',
     butik: 'ButikProfile',
-    category: 'Category',
     customer: 'CustomerProfile',
-    homeProduct: 'HomeProduct',
     product: 'Product',
     review: 'Review',
     user: 'User',
@@ -21,8 +18,6 @@ export const models = {
 }
 
 export const collections = {
-    banner: 'Logolar',
-    homeProduct: 'Ev Ürünleri',
     product: 'Ürünler',
     user: 'Kullanıcılar',
     butik: 'Butik Profilleri',
@@ -33,8 +28,9 @@ export const collections = {
 
 export const unauthorized = 'You are not authorized to perform this action.'
 
-export const privateKeyPath = join(__dirname, '..', 'secret', 'PRIV_KEY.pem')
-export const publicKeyPath = join(__dirname, '..', 'secret', 'PUB_KEY.pem')
+export const secretPath = join(__dirname, '..', 'secret')
+export const privateKeyPath = join(secretPath, 'PRIV_KEY.pem')
+export const publicKeyPath = join(secretPath, 'PUB_KEY.pem')
 export const DEVELOPMENT = 'DEVELOPMENT'
 export const PRODUCTION = 'PRODUCTION'
 export const LOCAL_HOST = 'localhost'
